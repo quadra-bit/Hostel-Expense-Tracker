@@ -2,8 +2,8 @@ from file3_analytics import calculate_total
 
 def test_math():
     mock_expenses = [
-        {"description": "Food", "amount": 100},
-        {"description": "Auto", "amount": 50}
+        {"item": "Food", "amount": 100},
+        {"item": "Auto", "amount": 50}
     ]
     total = calculate_total(mock_expenses)
     if total == 150:
