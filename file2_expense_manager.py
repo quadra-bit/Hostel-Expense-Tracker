@@ -1,9 +1,12 @@
 def add_expense(expenses):
     try:
-        buyed = input("What did you buy? (e.g., Food, Laundry): ")
-        amount = float(input(f"How much did {buyed} cost? ₹"))
-        expenses.append({"description": buyed, "amount": amount})
-        print(f"Added: {buyed} for ₹{amount}")
+        item = input("What did you buy? (e.g., Food, Laundry): ")
+        amount = float(input(f"How much did {item} cost? ₹"))
+        if amount <= 0:
+            print("Expense must be greater than zero.")
+            return expenses
+        expenses.append({"description": item, "amount": amount})
+        print(f"Added: {item} for ₹{amount}")
     except ValueError:
         print("Invalid amount! Expense not added.")
     return expenses
