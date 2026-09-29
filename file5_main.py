@@ -15,13 +15,14 @@ def main_menu():
 
         if choice == '1':
             expenses = add_expense(expenses)
+            file4_alerts.check_warnings(budget, expenses)
         elif choice == '2':
             view_expenses(expenses)
         elif choice == '3':
             show_balance(budget, expenses)
             file4_alerts.check_warnings(budget, expenses)
         elif choice == '4':
-            print("Exiting Tracker. Have a great month!")
+            print("Exiting Tracker... Have a great month! and spend with caution.")
             break
         else:
             print("Invalid choice, please try again.")
